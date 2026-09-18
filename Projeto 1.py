@@ -13,10 +13,10 @@ while rodando == True:
     ]
 
     print("Selecione um ativo para ver seu detalhes. Ou 'add' para adicionar um ativo")
-    print("1. Computadores")
-    print("2. Servidores")
-    print("3. Carros")
-    print("4. Teclados")
+
+    for item in ativos:
+        print(item["Número"],"-", item["nome"])
+
     entrada = input("Digite o número ou o nome do ativo (ou 'quit' para sair): ").strip().lower()
     print("-" * 60)
 
@@ -45,5 +45,5 @@ while rodando == True:
         novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": principal_vul}
         ativos.append(novo_ativo)
 
-        print(ativos)
-        print(f"Nome: {nome_ativo} \nvulnerabilidade: {principal_vul}")
+    for item in ativos:
+        print(item)
