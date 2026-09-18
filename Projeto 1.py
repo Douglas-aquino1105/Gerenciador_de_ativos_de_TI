@@ -12,7 +12,7 @@ while rodando == True:
 
     ]
 
-    print("Selecione um ativo para ver seu detalhes.")
+    print("Selecione um ativo para ver seu detalhes. Ou 'add' para adicionar um ativo")
     print("1. Computadores")
     print("2. Servidores")
     print("3. Carros")
@@ -35,3 +35,15 @@ while rodando == True:
             break
     if encontrado == False:
         print("Opção inválida! Tente novamente.")
+        print("-" * 60)
+
+    if entrada == "add" or 0:
+        print("Adicionando um novo ativo!")
+        nome_ativo = input(f"Qual o nome do ativo que deseja adicionar? ")
+        principal_vul = input(f"Qual a principal vulnerabilidade de tal ativo? ")
+
+        novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": principal_vul}
+        ativos.append(novo_ativo)
+
+        print(ativos)
+        print(f"Nome: {nome_ativo} \nvulnerabilidade: {principal_vul}")
