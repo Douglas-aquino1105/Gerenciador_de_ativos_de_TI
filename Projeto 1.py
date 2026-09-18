@@ -25,25 +25,31 @@ while rodando == True:
         rodando = False
         break
 
-    encontrado = False
-    for ativo in ativos:
-        if entrada == ativo["nome"].lower() or entrada == ativo["Número"]:
-            print(f"Ativo: {ativo['nome']}")
-            print(f"Principal vulnerabilidade: {ativo['Principal vulnerabilidade']}")
-            print("-" * 60)
-            encontrado = True
-            break
-    if encontrado == False:
-        print("Opção inválida! Tente novamente.")
-        print("-" * 60)
-
-    if entrada == "add" or 0:
+    elif entrada == "add" or 0:
         print("Adicionando um novo ativo!")
         nome_ativo = input(f"Qual o nome do ativo que deseja adicionar? ")
         principal_vul = input(f"Qual a principal vulnerabilidade de tal ativo? ")
 
         novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": principal_vul}
         ativos.append(novo_ativo)
+        print(f"Ativo '{nome_ativo}' adicionado com sucesso")
 
-    for item in ativos:
-        print(item)
+        for item in ativos: ##########################temporário, existe apenas para checagem
+            print(item)
+
+    else:
+        encontrado = False
+        for ativo in ativos:
+            if entrada == ativo["nome"].lower() or entrada == ativo["Número"]:
+                print(f"Ativo: {ativo['nome']}")
+                print(f"Principal vulnerabilidade: {ativo['Principal vulnerabilidade']}")
+                print("-" * 60)
+                encontrado = True
+                break
+        if encontrado == False:
+            print("Opção inválida! Tente novamente.")
+            print("-" * 60)
+
+    continuar = input(f"Pressione 'enter' para continuar ou 'quit' para fechar o programa ").strip().lower()
+    if continuar == "quit":
+        rodando = False
