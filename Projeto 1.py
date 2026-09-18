@@ -1,16 +1,17 @@
 
-ativos = [
-
-    {"nome": "Computadores", "Principal vulnerabilidade": "Roubo", "Número": "1" },
-    {"nome": "Servidores", "Principal vulnerabilidade": "Fogo", "Número": "2"  },
-    {"nome": "Carros", "Principal vulnerabilidade": "Roubo", "Número": "3"  },
-    {"nome": "Teclados", "Principal vulnerabilidade": "Roubo", "Número": "4"  },
-
-]
-
 rodando = True
 
 while rodando == True:
+
+    ativos = [
+
+        {"nome": "Computadores", "Principal vulnerabilidade": "Roubo", "Número": "1"},
+        {"nome": "Servidores", "Principal vulnerabilidade": "Fogo", "Número": "2"},
+        {"nome": "Carros", "Principal vulnerabilidade": "Roubo", "Número": "3"},
+        {"nome": "Teclados", "Principal vulnerabilidade": "Roubo", "Número": "4"},
+
+    ]
+
     print("Selecione um ativo para ver seu detalhes.")
     print("1. Computadores")
     print("2. Servidores")
