@@ -32,11 +32,12 @@ while rodando == True:
 
         novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": principal_vul, "Index": str(len(ativos)+1)}
         ativos.append(novo_ativo)
-        print(f"Ativo '{nome_ativo}' adicionado com sucesso")
-        print(f"Dados do ativo: {novo_ativo}")
+        print(f"\nAtivo '{nome_ativo}' adicionado com sucesso")
+        print(f"Dados do ativo: {novo_ativo}\n")
 
-        for item in ativos: ##########################temporário, existe apenas para checagem
-            print(item)
+        # for item in ativos: ##########################temporário, existe apenas para checagem
+        #     print(item)
+        #     print("-"*60)
 
     else:
         encontrado = False
@@ -50,7 +51,17 @@ while rodando == True:
         if encontrado == False:
             print("Opção inválida! Tente novamente.")
             print("-" * 60)
+            continue
 
-    continuar = input(f"Pressione 'enter' para continuar ou 'quit' para fechar o programa ").strip().lower()
-    if continuar == "quit":
-        rodando = False
+    loop2 = True
+    while loop2 == True:             #LOOP PARA EVITAR Q O PROGRAMA SAIA DE UMA PERGUNTA PARA OUTRA (PERGUNTA DO INICIO DO PROGRAMA)
+        continuar = input(f"Pressione 'enter' para continuar ou 'quit' para fechar o programa ").strip().lower()
+        if continuar == "quit":
+            rodando = False
+            loop2 = False
+
+        elif continuar == "":
+            loop2 = False
+
+        else:
+            print("Selecione uma opção válida")

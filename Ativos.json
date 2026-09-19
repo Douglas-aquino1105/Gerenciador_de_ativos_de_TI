@@ -1,0 +1,6 @@
+[
+    {"nome": "Computadores", "Principal vulnerabilidade": "Roubo", "index": "1"},
+    {"nome": "Servidores", "Principal vulnerabilidade": "Fogo", "index": "2"},
+    {"nome": "Carros", "Principal vulnerabilidade": "Roubo", "index": "3"},
+    {"nome": "Teclados", "Principal vulnerabilidade": "Roubo", "index": "4"}
+]
