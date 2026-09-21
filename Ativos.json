@@ -1,27 +1,39 @@
 [
     {
         "nome": "Computadores",
-        "Principal vulnerabilidade": "Roubo",
+        "Principal vulnerabilidade": [
+            "Roubo",
+            "fogo"
+        ],
         "Index": "1"
     },
     {
-        "nome": "Servidores",
-        "Principal vulnerabilidade": "Fogo",
+        "nome": "teste de troca de nome",
+        "Principal vulnerabilidade": [
+            "Fogo"
+        ],
         "Index": "2"
     },
     {
         "nome": "Carros",
-        "Principal vulnerabilidade": "Roubo",
+        "Principal vulnerabilidade": [
+            "Roubo",
+            "teste"
+        ],
         "Index": "3"
     },
     {
         "nome": "Teclados",
-        "Principal vulnerabilidade": "Roubo",
+        "Principal vulnerabilidade": [
+            "Roubo"
+        ],
         "Index": "4"
     },
     {
         "nome": "Contas bancárias",
-        "Principal vulnerabilidade": "Engenahria social",
+        "Principal vulnerabilidade": [
+            "Engenahria social"
+        ],
         "Index": "5"
     }
 ]

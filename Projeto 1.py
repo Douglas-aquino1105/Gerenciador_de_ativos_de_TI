@@ -21,7 +21,7 @@ while rodando == True:
 
 
 
-    print("\nDigite o Index ou o nome do ativo para ver seu detalhes,'add' para adicionar um ativo, ou 'del' para remover um ativo.")
+    print("\nDigite o Index ou o nome do ativo para ver seu detalhes,'add' para adicionar um ativo, 'del' para remover um ativo. Ou 'edit' para editar um ativo")
     print("Para sair digite 'quit'\n")
 
     for item in ativos:
@@ -40,7 +40,7 @@ while rodando == True:
         nome_ativo = input(f"Qual o nome do ativo que deseja adicionar? ").capitalize().strip()
         principal_vul = input(f"Qual a principal vulnerabilidade de tal ativo? ").capitalize().strip()
 
-        novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": principal_vul, "Index": str(len(ativos)+1)}
+        novo_ativo = {"nome": nome_ativo, "Principal vulnerabilidade": [principal_vul], "Index": str(len(ativos)+1)}
         ativos.append(novo_ativo)
         print(f"\nAtivo '{nome_ativo}' adicionado com sucesso")
         print(f"Dados do ativo: {novo_ativo}\n")
@@ -65,6 +65,56 @@ while rodando == True:
 
         else:
             print("\nAtivo não encontrado!")
+
+    elif entrada == "edit":
+        alvo = input("Digite o nome ou Index do ativo que deseja editar: ").lower().strip()
+        editado = False
+
+        for ativo in ativos:
+            if alvo == ativo["Index"] or alvo == ativo["nome"]:
+                print(f"Ativo '{ativo["nome"]}' encontrado! ")
+
+                while True:
+                    escolha = input("O que deseja editar?\n1. Nome\n2. Lista de vulnerabilidades\n").strip().lower()
+                    if escolha == "1" or escolha == "nome":
+                        novo_nome = input(f"Por qual nome deseja substituir? Nome atual: {ativo["nome"]}\n").lower().strip()
+                        ativo["nome"] = novo_nome
+                        print(f"Nome alterado com sucesso! Novo nome: {ativo["nome"]}")
+                        print(f"Novas informações do ativo: {ativo}")
+                        salvar_ativos(ativos)
+                        break
+
+                    elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":
+                        substituir = input("Qual operação deseja realizar? \n1. Substituir vulnerabilidade \n2. Adicionar vulnerabilidade\n").strip().lower()
+
+                        if substituir == "1" or substituir == "substituir":
+                            nova_vul = input(f"Por qual vulnerabilidade deseja substituir? Vulnerabilidades atuais: {ativo["Principal vulnerabilidade"]}\n").lower().strip()
+                            ativo["Principal vulnerabilidade"] = nova_vul
+                            print(f"Lista alterada com sucesso! Nova vulnerabilidade: {ativo["Principal vulnerabilidade"]}")
+                            print(f"Novas informações do ativo: {ativo}")
+                            salvar_ativos(ativos)
+                            break
+
+                        elif substituir == "2" or substituir == "adicionar vulnerabilidade":
+                            nova_vul = input(f"Qual vulnerabilidade deseja adicionar? Vulnerabilidades atuais: {ativo["Principal vulnerabilidade"]}\n").lower().strip()
+                            ativo["Principal vulnerabilidade"].append(nova_vul)
+                            print(f"Lista alterada com sucesso! Nova vulnerabilidade: {nova_vul}")
+                            print(f"Novas informações do ativo: {ativo}")
+                            salvar_ativos(ativos)
+                            break
+
+                        else:
+                            print("Opção inválida")
+
+                    else:
+                        print("Escolha uma opção válida!\n"+"-"*60)
+                        continue
+
+
+
+
+
+
 
     else:
         encontrado = False
