@@ -35,7 +35,7 @@ while rodando == True:
         rodando = False
         break
 
-    elif entrada == "add" or entrada == "0":            #CRIAÇÃO DE NOVO ATIVO
+    elif entrada == "add" or entrada == "0": #CRIAÇÃO DE NOVO ATIVO
         print("Adicionando um novo ativo!")
         nome_ativo = input(f"Qual o nome do ativo que deseja adicionar? ").capitalize().strip()
         principal_vul = input(f"Qual a principal vulnerabilidade de tal ativo? ").capitalize().strip()
@@ -52,7 +52,7 @@ while rodando == True:
         removido = False
 
         for ativo in ativos:
-            if alvo == ativo["Index" or alvo == ativo["nome"]]:
+            if alvo == ativo["Index"] or alvo == ativo["nome"]:
                 ativos.remove(ativo)
                 removido = True
                 print(f"Ativo '{ativo["nome"]}' removido com sucesso!")
@@ -61,7 +61,7 @@ while rodando == True:
         if removido:
             for i, ativo in enumerate(ativos, start=1):
                 ativo["Index"] = str(i)
-                salvar_ativos(ativos)
+            salvar_ativos(ativos)
 
         else:
             print("\nAtivo não encontrado!")
@@ -72,6 +72,7 @@ while rodando == True:
             if entrada == ativo["nome"].lower() or entrada == ativo["Index"]:
                 print(f"Ativo: {ativo['nome']}")
                 print(f"Principal vulnerabilidade: {ativo['Principal vulnerabilidade']}")
+                print(f"Index: {ativo['Index']}")
                 print("-" * 60)
                 encontrado = True
                 break
@@ -81,7 +82,7 @@ while rodando == True:
             continue
 
     loop2 = True
-    while loop2 == True:             #LOOP PARA EVITAR Q O PROGRAMA SAIA DE UMA PERGUNTA PARA OUTRA (PERGUNTA DO INICIO DO PROGRAMA)
+    while loop2 == True: #LOOP PARA EVITAR Q O PROGRAMA SAIA DE UMA PERGUNTA PARA OUTRA (PERGUNTA DO INICIO DO PROGRAMA)
         continuar = input(f"Pressione 'enter' para continuar ou 'quit' para fechar o programa ").strip().lower()
         if continuar == "quit":
             rodando = False
