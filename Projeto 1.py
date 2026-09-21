@@ -21,12 +21,13 @@ while rodando == True:
 
 
 
-    print("\nSelecione um ativo para ver seu detalhes. Ou 'add' para adicionar um ativo")
+    print("\nDigite o Index ou o nome do ativo para ver seu detalhes,'add' para adicionar um ativo, ou 'del' para remover um ativo.")
+    print("Para sair digite 'quit'\n")
 
     for item in ativos:
         print(item["Index"],"-", item["nome"])
 
-    entrada = input("Digite o Index ou o nome do ativo (ou 'quit' para sair): ").strip().lower()
+    entrada = input("\n"+"-"*25+"> ").strip().lower()
     print("-" * 60)
 
     if entrada == "quit":
@@ -45,6 +46,25 @@ while rodando == True:
         print(f"Dados do ativo: {novo_ativo}\n")
 
         salvar_ativos(ativos)
+
+    elif entrada == "del" or entrada == "remove":
+        alvo = input("Digite o Index ou o nome do ativo que deseja remover: ").strip().lower()
+        removido = False
+
+        for ativo in ativos:
+            if alvo == ativo["Index" or alvo == ativo["nome"]]:
+                ativos.remove(ativo)
+                removido = True
+                print(f"Ativo '{ativo["nome"]}' removido com sucesso!")
+                break
+
+        if removido:
+            for i, ativo in enumerate(ativos, start=1):
+                ativo["Index"] = str(i)
+                salvar_ativos(ativos)
+
+        else:
+            print("\nAtivo não encontrado!")
 
     else:
         encontrado = False

@@ -20,23 +20,8 @@
         "Index": "4"
     },
     {
-        "nome": "teste",
-        "Principal vulnerabilidade": "testar",
-        "Index": "5"
-    },
-    {
-        "nome": "firewall",
-        "Principal vulnerabilidade": "malware",
-        "Index": "6"
-    },
-    {
-        "nome": "modem",
-        "Principal vulnerabilidade": "falhas",
-        "Index": "7"
-    },
-    {
         "nome": "Contas bancárias",
         "Principal vulnerabilidade": "Engenahria social",
-        "Index": "8"
+        "Index": "5"
     }
 ]
