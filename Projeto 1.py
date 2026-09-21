@@ -84,19 +84,37 @@ while rodando == True:
                         salvar_ativos(ativos)
                         break
 
-                    elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":
+                    elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":  #VULNERABILIDADES
                         substituir = input("Qual operação deseja realizar? \n1. Substituir vulnerabilidade \n2. Adicionar vulnerabilidade\n").strip().lower()
 
                         if substituir == "1" or substituir == "substituir":
-                            nova_vul = input(f"Por qual vulnerabilidade deseja substituir? Vulnerabilidades atuais: {ativo["Principal vulnerabilidade"]}\n").lower().strip()
-                            ativo["Principal vulnerabilidade"] = nova_vul
-                            print(f"Lista alterada com sucesso! Nova vulnerabilidade: {ativo["Principal vulnerabilidade"]}")
-                            print(f"Novas informações do ativo: {ativo}")
-                            salvar_ativos(ativos)
-                            break
+                            print(f"Qual vulnerabilidade deseja subtituir?")
+
+                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1):
+                                print (f"{i}.'{vul}'")
+
+                            escolhida = input("-"*25+"> ").strip().lower()
+                            posiçao_encontrada = None
+
+                            for index, vul in enumerate(ativo["Principal vulnerabilidade"]):
+                                if escolhida == str(index+1) or escolhida == vul.lower():
+                                    posiçao_encontrada = index
+                                    break
+
+                            if posiçao_encontrada is not None:
+                                vul_antiga = ativo["Principal vulnerabilidade"][posiçao_encontrada]
+                                nova_vul = input(f"Substituir '{vul_antiga}' por qual nova vulnerabilidade? ").strip().capitalize()
+
+                                # Substitui apenas a vulnerabilidade daquela posição específica
+                                ativo["Principal vulnerabilidade"][posiçao_encontrada] = nova_vul
+
+                                print(f"\nVulnerabilidade '{vul_antiga}' alterada com sucesso para '{nova_vul}'!")
+                                print(f"Novas informações do ativo: {ativo}")
+                                salvar_ativos(ativos)
+                                break
 
                         elif substituir == "2" or substituir == "adicionar vulnerabilidade":
-                            nova_vul = input(f"Qual vulnerabilidade deseja adicionar? Vulnerabilidades atuais: {ativo["Principal vulnerabilidade"]}\n").lower().strip()
+                            nova_vul = input(f"Qual vulnerabilidade deseja adicionar? Vulnerabilidades atuais: {ativo["Principal vulnerabilidade"]}\n").capitalize().strip()
                             ativo["Principal vulnerabilidade"].append(nova_vul)
                             print(f"Lista alterada com sucesso! Nova vulnerabilidade: {nova_vul}")
                             print(f"Novas informações do ativo: {ativo}")
