@@ -105,11 +105,11 @@ while rodando == True:
             print("\nAtivo não encontrado!")
 
     elif entrada == "edit":
-        alvo = input("Digite o nome ou Index do ativo que deseja editar: ").strip().lower()
+        alvo = input("Digite o nome ou Index do ativo que deseja editar: ").strip().capitalize()
         editado = False
 
         for ativo in ativos:
-            if alvo == ativo["Index"] or alvo == ativo["nome"].lower():
+            if alvo == ativo["Index"] or alvo == ativo["nome"].capitalize():
                 print(f"Ativo '{ativo['nome']}' encontrado!")
 
                 while True:

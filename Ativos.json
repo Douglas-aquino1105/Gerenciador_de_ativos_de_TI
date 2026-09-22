@@ -62,5 +62,20 @@
             "Não atribuído"
         ],
         "Index": "7"
+    },
+    {
+        "nome": "Site empresarial",
+        "Principal vulnerabilidade": [
+            {
+                "Nome": "Injeção de sql",
+                "tipo": "Software",
+                "severidade": "Alta",
+                "status": "Em tratamento"
+            }
+        ],
+        "Responsavel": [
+            "Junior"
+        ],
+        "Index": "8"
     }
 ]

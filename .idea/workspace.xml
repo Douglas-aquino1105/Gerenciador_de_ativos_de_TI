@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="Implementação da função de adicionar e gerenciar responsáveis para cada ativo">
+    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="Criação de novas funções para criar e exibir vulnerabilidades&#10;Expansão do sistema de vulnerabilidades, adicionando a capacidade de atribuir descrições, severidade e status de resolução a cada vulnerabilidade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ativos.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ativos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projeto 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto 1.py" afterDir="false" />
@@ -97,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790118039306</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Criação de novas funções para criar e exibir vulnerabilidades&#10;Expansão do sistema de vulnerabilidades, adicionando a capacidade de atribuir descrições, severidade e status de resolução a cada vulnerabilidade">
+      <option name="closed" value="true" />
+      <created>1790119307035</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1790119307035</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -105,6 +113,7 @@
     <MESSAGE value="Adicionada a funcionalidade de edição de vulnerabilidades especificas" />
     <MESSAGE value="Edição de comentários" />
     <MESSAGE value="Implementação da função de adicionar e gerenciar responsáveis para cada ativo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação da função de adicionar e gerenciar responsáveis para cada ativo" />
+    <MESSAGE value="Criação de novas funções para criar e exibir vulnerabilidades&#10;Expansão do sistema de vulnerabilidades, adicionando a capacidade de atribuir descrições, severidade e status de resolução a cada vulnerabilidade" />
+    <option name="LAST_COMMIT_MESSAGE" value="Criação de novas funções para criar e exibir vulnerabilidades&#10;Expansão do sistema de vulnerabilidades, adicionando a capacidade de atribuir descrições, severidade e status de resolução a cada vulnerabilidade" />
   </component>
 </project>
