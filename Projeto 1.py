@@ -85,7 +85,7 @@ while rodando == True:
                         break
 
                     elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":  #VULNERABILIDADES
-                        substituir = input("Qual operação deseja realizar? \n1. Substituir vulnerabilidade \n2. Adicionar vulnerabilidade\n").strip().lower()
+                        substituir = input("Qual operação deseja realizar? \n1. Substituir vulnerabilidade \n2. Adicionar vulnerabilidade\n3. Remover vulnerabilidade\n").strip().lower()
 
                         if substituir == "1" or substituir == "substituir":
                             print(f"Qual vulnerabilidade deseja subtituir?")
@@ -120,6 +120,35 @@ while rodando == True:
                             print(f"Novas informações do ativo: {ativo}")
                             salvar_ativos(ativos)
                             break
+
+                        elif substituir == "3" or substituir == "remover vulnerabilidade" or substituir == "remover":
+                            if len(ativo["Principal vulnerabilidade"]) == 0:
+                                print("Este ativo não possui vulnerabilidades para serem removidas")
+                                break
+
+                            print("Qual vulnerabilidade deseja remover?")
+
+                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1):
+                                print (f"{i}.'{vul}'")
+
+                            escolhida = input("-" * 25 + "> ").strip().lower()
+                            posiçao_encontrada = None
+
+                            for index, vul in enumerate(ativo["Principal vulnerabilidade"]):
+                                if escolhida == str(index + 1) or escolhida == vul.lower():
+                                    posiçao_encontrada = index
+                                    break
+
+                            if posiçao_encontrada is not None:
+                                # O recurso .pop() remove o item da lista usando a posição (index) e retorna o item removido
+                                vul_removida = ativo["Principal vulnerabilidade"].pop(posiçao_encontrada)
+                                print(f"\nVulnerabilidade '{vul_removida}' removida com sucesso!")
+                                print(f"Novas informações do ativo: {ativo}")
+                                salvar_ativos(ativos)
+                                break
+
+                            else:
+                                print("Vulnerabilidade não encontrada!")
 
                         else:
                             print("Opção inválida")
