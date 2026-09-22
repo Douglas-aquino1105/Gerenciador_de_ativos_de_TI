@@ -39,8 +39,19 @@
         "nome": "Firewall",
         "Principal vulnerabilidade": [
             "Malware",
-            "Fogo"
+            "Fogo",
+            "Teste"
         ],
         "Index": "6"
+    },
+    {
+        "nome": "Teste de responsável",
+        "Principal vulnerabilidade": [
+            "Teste"
+        ],
+        "Responsavel": [
+            "Não atribuído"
+        ],
+        "Index": "7"
     }
 ]
