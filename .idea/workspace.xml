@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="Adicionada a funcionalidade de edição de vulnerabilidades especificas">
+    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ativos.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ativos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projeto 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto 1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,13 +42,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Projeto 1.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Projeto 1.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,6 +87,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adicionada a funcionalidade de edição de ativos" />
     <MESSAGE value="Adicionada a funcionalidade de edição de vulnerabilidades especificas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionada a funcionalidade de edição de vulnerabilidades especificas" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

@@ -59,7 +59,7 @@ while rodando == True:
                 break
 
         if removido:
-            for i, ativo in enumerate(ativos, start=1):
+            for i, ativo in enumerate(ativos, start=1): #RE-ENUMERA OS ATIVOS E SALVA
                 ativo["Index"] = str(i)
             salvar_ativos(ativos)
 
@@ -67,7 +67,7 @@ while rodando == True:
             print("\nAtivo não encontrado!")
 
     elif entrada == "edit":
-        alvo = input("Digite o nome ou Index do ativo que deseja editar: ").lower().strip()
+        alvo = input("Digite o nome ou Index do ativo que deseja editar: ").capitalize().strip()
         editado = False
 
         for ativo in ativos:
@@ -84,25 +84,25 @@ while rodando == True:
                         salvar_ativos(ativos)
                         break
 
-                    elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":  #VULNERABILIDADES
+                    elif escolha == "2" or escolha == "lista de vulnerabilidades" or escolha =="lista":
                         substituir = input("Qual operação deseja realizar? \n1. Substituir vulnerabilidade \n2. Adicionar vulnerabilidade\n3. Remover vulnerabilidade\n").strip().lower()
 
                         if substituir == "1" or substituir == "substituir":
                             print(f"Qual vulnerabilidade deseja subtituir?")
 
-                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1):
+                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1): #FUNÇÃO PRA PRINTAR LISTA FORMATADA | VUL=PRINCIPAL VULNERABILIDADE
                                 print (f"{i}.'{vul}'")
 
                             escolhida = input("-"*25+"> ").strip().lower()
                             posiçao_encontrada = None
 
                             for index, vul in enumerate(ativo["Principal vulnerabilidade"]):
-                                if escolhida == str(index+1) or escolhida == vul.lower():
+                                if escolhida == str(index+1) or escolhida == vul.lower(): #+1 PORQUE COMEÇA NO 0
                                     posiçao_encontrada = index
                                     break
 
                             if posiçao_encontrada is not None:
-                                vul_antiga = ativo["Principal vulnerabilidade"][posiçao_encontrada]
+                                vul_antiga = ativo["Principal vulnerabilidade"][posiçao_encontrada] # ATIVO[CAMPO DICONARIO][INDEX]
                                 nova_vul = input(f"Substituir '{vul_antiga}' por qual nova vulnerabilidade? ").strip().capitalize()
 
                                 # Substitui apenas a vulnerabilidade daquela posição específica
@@ -122,13 +122,13 @@ while rodando == True:
                             break
 
                         elif substituir == "3" or substituir == "remover vulnerabilidade" or substituir == "remover":
-                            if len(ativo["Principal vulnerabilidade"]) == 0:
+                            if len(ativo["Principal vulnerabilidade"]) == 0: #LEN CONFERE SE EXISTE ALGUM DADO NO DICIONARIO (LENGTH)
                                 print("Este ativo não possui vulnerabilidades para serem removidas")
                                 break
 
                             print("Qual vulnerabilidade deseja remover?")
 
-                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1):
+                            for i, vul in enumerate(ativo["Principal vulnerabilidade"], start=1): #LISTA ORGANIZADA
                                 print (f"{i}.'{vul}'")
 
                             escolhida = input("-" * 25 + "> ").strip().lower()
@@ -190,3 +190,5 @@ while rodando == True:
 
         else:
             print("Selecione uma opção válida")
+
+            #mais opções de descrições para o ativo | descrições vulnerabilidades
