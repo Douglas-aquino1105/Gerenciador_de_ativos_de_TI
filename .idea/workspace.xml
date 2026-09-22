@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="Edição de comentários">
+    <list default="true" id="2f049283-44aa-4760-9e13-47ddb7f09164" name="Changes" comment="Implementação da função de adicionar e gerenciar responsáveis para cada ativo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ativos.json" beforeDir="false" afterPath="$PROJECT_DIR$/Ativos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projeto 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto 1.py" afterDir="false" />
@@ -89,13 +89,22 @@
       <option name="project" value="LOCAL" />
       <updated>1790115988783</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implementação da função de adicionar e gerenciar responsáveis para cada ativo">
+      <option name="closed" value="true" />
+      <created>1790118039306</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1790118039306</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adicionada a funcionalidade de edição de ativos" />
     <MESSAGE value="Adicionada a funcionalidade de edição de vulnerabilidades especificas" />
     <MESSAGE value="Edição de comentários" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edição de comentários" />
+    <MESSAGE value="Implementação da função de adicionar e gerenciar responsáveis para cada ativo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação da função de adicionar e gerenciar responsáveis para cada ativo" />
   </component>
 </project>

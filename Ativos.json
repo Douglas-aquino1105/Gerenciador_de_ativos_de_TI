@@ -4,7 +4,10 @@
         "Principal vulnerabilidade": [
             "Fogo pc"
         ],
-        "Index": "1"
+        "Index": "1",
+        "Responsavel": [
+            "Zé da silva"
+        ]
     },
     {
         "nome": "Teste de troca de nome",
@@ -40,7 +43,13 @@
         "Principal vulnerabilidade": [
             "Malware",
             "Fogo",
-            "Teste"
+            "Teste",
+            {
+                "Nome": "Teste",
+                "tipo": "Software",
+                "severidade": "Média",
+                "status": "Aberta"
+            }
         ],
         "Index": "6"
     },
