@@ -1,42 +1,15 @@
 [
     {
-        "nome": "Computadores",
-        "Principal vulnerabilidade": [
-            "Fogo pc"
-        ],
-        "Index": "1",
-        "Responsavel": [
-            "Zé da silva"
-        ]
-    },
-    {
-        "nome": "Teste de troca de nome",
-        "Principal vulnerabilidade": [
-            "Fogo"
-        ],
-        "Index": "2"
-    },
-    {
-        "nome": "Carros",
-        "Principal vulnerabilidade": [
-            "Roubo",
-            "teste"
-        ],
-        "Index": "3"
-    },
-    {
         "nome": "Teclados",
         "Principal vulnerabilidade": [
-            "Roubo"
+            {
+                "Nome": "Roubo",
+                "tipo": "Hardware",
+                "severidade": "Média",
+                "status": "Aceita como risco"
+            }
         ],
-        "Index": "4"
-    },
-    {
-        "nome": "Contas bancárias",
-        "Principal vulnerabilidade": [
-            "Engenahria social"
-        ],
-        "Index": "5"
+        "Index": "1"
     },
     {
         "nome": "Firewall",
@@ -51,17 +24,7 @@
                 "status": "Aberta"
             }
         ],
-        "Index": "6"
-    },
-    {
-        "nome": "Teste de responsável",
-        "Principal vulnerabilidade": [
-            "Teste"
-        ],
-        "Responsavel": [
-            "Não atribuído"
-        ],
-        "Index": "7"
+        "Index": "2"
     },
     {
         "nome": "Site empresarial",
@@ -76,6 +39,42 @@
         "Responsavel": [
             "Junior"
         ],
-        "Index": "8"
+        "Index": "3"
+    },
+    {
+        "nome": "Cafeteira",
+        "Principal vulnerabilidade": [
+            {
+                "Nome": "Queda",
+                "tipo": "Hardware",
+                "severidade": "Média",
+                "status": "Aceita como risco"
+            },
+            {
+                "Nome": "Queima de componentes",
+                "tipo": "Hardware",
+                "severidade": "Baixa",
+                "status": "Aceita como risco"
+            }
+        ],
+        "Responsavel": [
+            "Lucas"
+        ],
+        "Index": "4"
+    },
+    {
+        "nome": "Televisão",
+        "Principal vulnerabilidade": [
+            {
+                "Nome": "Quebra da tela",
+                "tipo": "Hardware",
+                "severidade": "Baixa",
+                "status": "Aceita como risco"
+            }
+        ],
+        "Responsavel": [
+            "Jorge"
+        ],
+        "Index": "5"
     }
 ]

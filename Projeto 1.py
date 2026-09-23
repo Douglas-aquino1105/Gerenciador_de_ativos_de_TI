@@ -89,20 +89,38 @@ while rodando == True:
     elif entrada == "del" or entrada == "remove":
         alvo = input("Digite o Index ou o nome do ativo que deseja remover: ").strip().lower()
         removido = False
+        cancelar = False
 
-        for ativo in ativos:
+
+        for ativo in ativos: #REMOVE O ATIVO
             if alvo == ativo["Index"] or alvo == ativo["nome"].lower():
-                ativos.remove(ativo)
-                removido = True
-                print(f"Ativo '{ativo['nome']}' removido com sucesso!")
+                while True:
+                    certeza = input(f"Tem certeza de que deseja remover o ativo '{ativo["nome"]}'? Essa operação não pode ser revertida!\nY/N ").lower().strip()
+                    if certeza == "yes" or certeza == "y":
+                        ativos.remove(ativo)
+                        removido = True
+                        print(f"Ativo '{ativo['nome']}' removido com sucesso!")
+                        print("-"*60)
+                        break
+                    elif certeza == "no" or certeza == "n":
+                        print("Operação cancelada!")
+                        cancelar = True #VARIAVEL PARA CANCELAR O AVISO DE 'ATIVO NAO ENCONTRADO'
+                        break
+                    else:
+                        print("Operação inválida!")
+                        print("-"*60)
                 break
 
         if removido:
             for i, ativo in enumerate(ativos, start=1):
                 ativo["Index"] = str(i)
             salvar_ativos(ativos)
-        else:
-            print("\nAtivo não encontrado!")
+        elif not cancelar and not removido: #NAO ATIVA QUANDO 'OPERAÇÃO INVALIDA' PORQUE O WHILE LOOP REPETE ATÉ 'CERTEZA' TER RESULTADO
+            print("Ativo não encontrado!")
+            print("-" * 60)
+        if cancelar or not removido: #CORRIGE O BUG DE O PROGRAMA FECHAR SEM O PROMPT DE CONFIRMAÇÃO
+            continue
+
 
     elif entrada == "edit":
         alvo = input("Digite o nome ou Index do ativo que deseja editar: ").strip().capitalize()
@@ -111,10 +129,11 @@ while rodando == True:
         for ativo in ativos:
             if alvo == ativo["Index"] or alvo == ativo["nome"].capitalize():
                 print(f"Ativo '{ativo['nome']}' encontrado!")
+                print("-" * 60)
 
                 while True:
                     escolha = input(
-                        "\nO que deseja editar?\n1. Nome\n2. Lista de vulnerabilidades\n3. Responsável\n> ").strip().lower()
+                        "O que deseja editar?\n1. Nome\n2. Lista de vulnerabilidades\n3. Responsável\n> ").strip().lower()
 
                     if escolha == "1" or escolha == "nome":
                         novo_nome = input(
@@ -277,6 +296,7 @@ while rodando == True:
 
         if not editado:
             print("Ativo não encontrado!")
+            print("-" * 60)
 
     else:  # EXIBIÇÃO DE DETALHES DO ATIVO
         encontrado = False
@@ -298,7 +318,7 @@ while rodando == True:
     loop2 = True
     while loop2 == True:
         continuar = input(f"Pressione 'enter' para continuar ou 'quit' para fechar o programa ").strip().lower()
-        if continuar == "quit":
+        if continuar != "":
             rodando = False
             loop2 = False
         elif continuar == "":
