@@ -1,4 +1,19 @@
 import json
+import random
+
+def gerador_index_unico(lista_ativos):
+
+    while True:
+        novo_id = str(random.randint(1,1000))
+
+        id_existe = False #SE JÁ EXISTIR ELE CANCELA A FUNÇÃO SEM RETORNAR O VALOR DE NOVO_ID
+        for ativo in lista_ativos:
+            if ativo.get("Index") == novo_id:
+                id_existe = True
+                break
+
+        if not id_existe:
+            return novo_id
 
 
 # FUNÇÃO PARA CRIAR A ESTRUTURA DETALHADA DA VULNERABILIDADE
@@ -74,11 +89,13 @@ while rodando == True:
         # Chama a função para coletar a vulnerabilidade com os 4 campos requeridos
         vuln_inicial = criar_vulnerabilidade()
 
+        index_unico = gerador_index_unico(ativos)
+
         novo_ativo = {
             "nome": nome_ativo,
             "Principal vulnerabilidade": [vuln_inicial],
             "Responsavel": [responsavel_ativo],
-            "Index": str(len(ativos) + 1)
+            "Index": index_unico
         }
         ativos.append(novo_ativo)
         print(f"\nAtivo '{nome_ativo}' adicionado com sucesso!")
@@ -112,8 +129,8 @@ while rodando == True:
                 break
 
         if removido:
-            for i, ativo in enumerate(ativos, start=1):
-                ativo["Index"] = str(i)
+            #for i, ativo in enumerate(ativos, start=1):
+                #ativo["Index"] = str(i)
             salvar_ativos(ativos)
         elif not cancelar and not removido: #NAO ATIVA QUANDO 'OPERAÇÃO INVALIDA' PORQUE O WHILE LOOP REPETE ATÉ 'CERTEZA' TER RESULTADO
             print("Ativo não encontrado!")
