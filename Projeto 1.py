@@ -32,7 +32,7 @@ def criar_vulnerabilidade():
     }
 
 
-# FUNÇÃO PARA EXIBIR VULNERABILIDADES (COMPATÍVEL COM STRINGS ANTIGAS E DICIONÁRIOS NOVOS)
+# FUNÇÃO PARA EXIBIR VULNERABILIDADES
 def exibir_vulnerabilidades(lista_vulns):
     for i, vul in enumerate(lista_vulns, start=1):
         if isinstance(vul, dict): #RETORNA TRUE SE FOR DO TIPO ESPECIFICADO, EX: VUL É UM DICIONARIO? TRUE/FALSE
